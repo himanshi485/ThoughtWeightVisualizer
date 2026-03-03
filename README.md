@@ -1,104 +1,115 @@
-🌌 Thought Space
-Physics-Based Mindfulness Visualizer
+# Thought Space  
+### A Physics-Based Mindfulness Visualizer for iOS
 
-SwiftUI • SpriteKit • Physics Simulation • Offline First
+---
 
-<p align="center"> <img src="https://img.shields.io/badge/SwiftUI-iOS-blue?style=for-the-badge"> <img src="https://img.shields.io/badge/SpriteKit-Physics-purple?style=for-the-badge"> <img src="https://img.shields.io/badge/Swift-5.0-red?style=for-the-badge"> <img src="https://img.shields.io/badge/Offline-Ready-green?style=for-the-badge"> </p>
-✨ Overview
+<p align="left">
+  <img src="https://img.shields.io/badge/Platform-iOS-black?style=flat-square">
+  <img src="https://img.shields.io/badge/Swift-5.x-orange?style=flat-square">
+  <img src="https://img.shields.io/badge/SwiftUI-UI-blue?style=flat-square">
+  <img src="https://img.shields.io/badge/SpriteKit-Physics-purple?style=flat-square">
+  <img src="https://img.shields.io/badge/Offline-First-green?style=flat-square">
+</p>
 
-Thought Space is an interactive iOS app that visualizes thoughts as floating physical objects in a cosmic environment.
+---
 
-Instead of simply telling users to “calm down,” the app creates an experiential metaphor:
+## Overview
 
-❌ Resist a thought → it becomes heavier and harder to move
+**Thought Space** is an interactive iOS application that visualizes thoughts as physical objects in a zero-gravity environment. Built with **SwiftUI** and **SpriteKit**, the app transforms abstract mental processes into physics-based interactions.
 
-✅ Accept a thought → it becomes lighter and floats away
+Instead of providing passive guidance, the app allows users to *experience* how resistance increases cognitive load and how acceptance enables release.
 
-Built using SwiftUI + SpriteKit, the app transforms mindfulness into a physics-based interaction.
+---
 
-🚀 Features
+## Problem
 
-🌌 Zero-gravity floating thought bubbles
+Intrusive and repetitive thoughts are common, especially under stress. Suppression often amplifies mental burden rather than reducing it. Traditional wellness apps rely heavily on text prompts or meditation timers but rarely provide experiential understanding.
 
-🫧 Neon glowing pill-style UI
+---
 
-👆 Tap to select and interact
+## Solution
 
-➕ Add custom thoughts via modal
+Each thought appears as a floating object governed by physics:
 
-❌ Resist → turns red, increases weight, darkens with repetition
+- **Resist** → The thought increases in weight, becomes denser, and harder to move.
+- **Accept** → The thought becomes lighter, glows, and floats upward off screen.
 
-✅ Accept → turns green, floats upward, fades away
+This interaction model reinforces emotional regulation principles through motion, mass, and visual feedback.
 
-📜 Thought history with timestamps
+---
 
-💾 Local persistence using JSON + UserDefaults
+## Core Features
 
-🎬 Cinematic onboarding experience
+### Interactive Thought Space
+- Zero-gravity physics simulation (SpriteKit)
+- Boundary constraints to maintain on-screen interaction
+- Dynamic neon pill-shaped thought nodes
+- Tap to select and interact
 
-🔄 Reset logic when all thoughts are cleared
+### Thought Actions
+- **Resist:** increases mass, deepens color, simulates emotional burden
+- **Accept:** reduces mass, upward impulse, fade and removal animation
 
-🛠 Tech Stack
+### Add Thought
+- Modal input interface
+- Real-time character counter
+- Instant spawning into simulation
 
-Swift
+### History & Persistence
+- Timestamped thought history
+- Status tracking (Neutral, Resisted, Accepted)
+- Local persistence using JSON encoding + UserDefaults
+- Delete functionality
 
-SwiftUI (UI & state management)
+### Onboarding
+- Animated introduction explaining the core metaphor
+- Reset logic when all thoughts are cleared
 
-SpriteKit (physics simulation & motion)
+---
 
-UserDefaults + JSON encoding (local persistence)
+## Technical Architecture
 
-Core Animation (glow & smooth transitions)
+- **SwiftUI** — Declarative UI and state management
+- **SpriteKit** — Physics engine, motion, collisions, impulses
+- **UserDefaults + Codable** — Lightweight offline persistence
+- Custom `SKShapeNode` subclasses for dynamic pill-shaped thought nodes
 
-🧠 Core Concept Workflow
+---
 
-User adds or selects a floating thought
+## Design Principles
 
-Thought exists as a physics object
+- Minimal interface focused on interaction
+- Dark cosmic theme to reduce visual strain
+- Neon glow to emphasize state changes
+- Smooth, non-chaotic motion
+- Fully offline operation
 
-User chooses:
+---
 
-Resist → increases mass & instability
+## Project Structure
 
-Accept → decreases mass & releases upward
+```plaintext
+ThoughtSpace/
+├── ContentView.swift
+├── ThoughtScene.swift
+├── ThoughtNode.swift
+├── OnboardingView.swift
+├── HistoryView.swift
+├── Models/
+└── Persistence/
+```
 
-Thought updates state & is saved to history
+---
 
-Experience continues dynamically
+## Privacy
 
-🎨 Design Philosophy
+- No data collection  
+- No network usage  
+- No third-party libraries  
+- All data stored locally on device  
 
-🌑 Deep space / cosmic theme
+---
 
-✨ Neon glow & glassmorphism UI
+## Motivation
 
-🧘 Calm, immersive interaction
-
-🔁 Experiential learning over passive instruction
-
-📱 Minimal UI chrome for focus
-
-📱 App Structure
-
-Onboarding Screen
-
-Thought Space (Main Physics Scene)
-
-Add Thought Modal
-
-Thought History View
-
-🔒 Privacy
-
-100% Offline
-
-No data collection
-
-No external APIs
-
-All data stored locally on device
-
-💭 Why This Project?
-
-Thought Space was inspired by the idea that suppressing thoughts increases mental burden, while acceptance reduces it.
-By visualizing thoughts as physical objects, users can experience the difference between resistance and release.
+This project was inspired by the idea that resisting thoughts increases their perceived weight, while acceptance reduces their intensity. By visualizing this principle through physics, the app provides a tangible way to understand emotional processing.
